@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Consulta Agenda</string>
+    <string name="boton">pinche aqui</string>
+    <string name="hint_phone">Introduce el numero de telefono</string>
+    <string name="vacio" />
+    <string name="okey">okey</string>
+    <string name="cancel">cancel</string>
+    <string name="title">Read Contacts Permision Required</string>
+    <string name="message">Explanation</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="settingTittle">settings</string>
+</resources>
