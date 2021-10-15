@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -57,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.etphone);
         textView = findViewById(R.id.textView);
 
+        SharedPreferences preferenciasActividad = getPreferences(Context.MODE_PRIVATE);
+        String lastSearch = preferenciasActividad.getString(getString(R.string.last_search), "");
+        if(!lastSearch.isEmpty()) {
+            editText.setText(lastSearch);
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,6 +111,31 @@ public class MainActivity extends AppCompatActivity {
             displayName = cursor.getString(columna);
             Log.v("zzzz", displayName);
         }*/
+        String phone = editText.getText().toString();
+
+        SharedPreferences preferenciasActividad = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferenciasActividad.edit();
+        editor.putString("last_search", phone);
+        editor.commit();
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        SharedPreferences p1 = getSharedPreferences("preferenciascompartidas", Context.MODE_PRIVATE);
+        SharedPreferences p2 = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences p3 = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences p4 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        SharedPreferences.Editor ed1 = p1.edit();
+        SharedPreferences.Editor ed2 = p2.edit();
+        SharedPreferences.Editor ed3 = p3.edit();
+        SharedPreferences.Editor ed4 = p4.edit();
+
+        ed1.putString("ved1", "v1");
+        ed2.putString("ved2", "v2");
+        ed3.putString("ved3", "v3");
+        ed4.putString("ved4", "v4");
+
+        ed1.commit();ed2.commit();ed3.commit();ed4.commit();
 
         //----------------------------------------------------------------------------------------
 
@@ -112,9 +146,6 @@ public class MainActivity extends AppCompatActivity {
         String orden2 = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME;
         Cursor cursor2 = getContentResolver().query(uri2, proyeccion2, seleccion2, argumentos2, orden2);
         String[] columna2 = cursor2.getColumnNames(); //cursor2.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
-        for (String s: columna2) {
-            Log.v("zzzz", s);
-        }
 
         int colunmnaNombre = cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
         int columnaNumero = cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
