@@ -1,28 +1,16 @@
 <resources>
-    <string name="app_name">Consulta Agenda</string>
-    <string name="boton">pinche aqui</string>
-    <string name="hint_phone">Introduce el numero de telefono</string>
-    <string name="vacio" />
-    <string name="okey">okey</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Consulta Agenda AD</string>
+    <string name="button_search">search</string>
     <string name="cancel">cancel</string>
-    <string name="title">Read Contacts Permision Required</string>
-    <string name="message">Explanation</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="settingTittle">settings</string>
+    <string name="hint_phone">Introduce the phone number</string>
     <string name="last_search">lastsearch</string>
+    <string name="message">Rationale explanation ...</string>
+    <string name="messages_header">Your account</string>
+    <string name="no_email">without email</string>
+    <string name="ok">ok</string>
+    <string name="settings_email">email</string>
+    <string name="signature_title">Your email</string>
+    <string name="title">Read Contacts Permission Required</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>
